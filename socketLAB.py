@@ -11,15 +11,15 @@ sock.connect(server_address)
 
 try:
     
-#    message = 'This is the message.  It will be repeated.'
-    print 'Para sair use CTRL+X\n'
-    message = raw_input()
-    while message <> '\x18':
-        sock.sendall(message)
-        message = raw_input()
+    message = socket.gethostname()
+#    print 'Para sair use CTRL+X\n'
+#    message = raw_input()
+#    while message <> '\x18':
+#        sock.sendall(message)
+#        message = raw_input()
 
-#    print >>sys.stderr, 'sending "%s"' % message
-#    sock.sendall(message)
+    print >>sys.stderr, 'sending "%s"' % message
+    sock.sendall(message)
 
     amount_received = 0
     amount_expected = len(message)
